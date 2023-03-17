@@ -2,7 +2,7 @@ import {useMoralis} from "react-moralis";
 import {useEffect} from "react";
 
 export default function ManualHeader() {
-    const {enableWeb3, account, isWeb3Enabled, Moralis, deactivateWeb3} = useMoralis();
+    const {enableWeb3, account, isWeb3Enabled, Moralis, deactivateWeb3, isWeb3EnableLoading} = useMoralis();
 
     // check if we have an existing connected wallet.  if we do, make sure web3 is enabled and set "connected" state item.
     useEffect(() => {
@@ -35,8 +35,10 @@ export default function ManualHeader() {
                         if (typeof window !== "undefined") {
                             window.localStorage.setItem("connected", "injected");
                         }
-                    }}>
-                    Connect
+                    }}
+                    disabled={isWeb3EnableLoading}
+                >
+                Connect
                 </button>
             )}
         </div>
