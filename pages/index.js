@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css";
 //import ManualHeader from "../components/ManualHeader";
 import Header from "../components/Header";
+import ManualHeader from "../components/ManualHeader";
 import SayHello from "../components/SayHello";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <hr />
       <SayHello />
+      <hr />
     </>
   );
 }
